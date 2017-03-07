@@ -75,6 +75,24 @@
                     <span class="attention"> (上限3000文字)</span>
                 </td>
             </tr>
+            <tr>
+                <th>表示終了期限<span class="attention"> *</span></th>
+                <td>
+                    <!--{if $arrErr.end_year || $arrErr.end_month || $arrErr.end_day}--><span class="attention"><!--{$arrErr.end_year}--><!--{$arrErr.end_month}--><!--{$arrErr.end_day}--></span><!--{/if}-->
+                    <select name="end_year" <!--{if $arrErr.end_year || $arrErr.end_month || $arrErr.end_day }-->style="background-color:<!--{$smarty.const.ERR_COLOR|h}-->"<!--{/if}-->>
+                    <option value="" selected="selected">----</option>
+                    <!--{html_options options=$arrYear selected=$arrForm.end_year.value}-->
+                    </select>年
+                    <select name="end_month" <!--{if $arrErr.end_year || $arrErr.end_month || $arrErr.end_day}-->style="background-color:<!--{$smarty.const.ERR_COLOR|h}-->"<!--{/if}-->>
+                    <option value="" selected="selected">--</option>
+                    <!--{html_options options=$arrMonth selected=$arrForm.end_month.value}-->
+                    </select>月
+                    <select name="end_day" <!--{if $arrErr.end_year || $arrErr.end_month || $arrErr.end_day}-->style="background-color:<!--{$smarty.const.ERR_COLOR|h}-->"<!--{/if}-->>
+                    <option value="" selected="selected">--</option>
+                    <!--{html_options options=$arrDay selected=$arrForm.end_day.value}-->
+                    </select>日
+                </td>
+            </tr>
         </table>
         <!--{* ▲登録テーブルここまで *}-->
 
