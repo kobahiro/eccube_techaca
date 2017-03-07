@@ -1,0 +1,84 @@
+2017/03/07 12:23:16 [/eccube-2.13.5-mysql/html/admin/contents/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [UPDATE dtb_news SET news_id= ?, news_title= ?, news_url= ?, news_comment= ?, link_method= ?, end_year= ?, end_month= ?, end_day= ?, news_date= ?, update_date= CURRENT_TIMESTAMP WHERE news_id = ?]
+MDB2 Error: no such field
+_doQuery: [Error message: Could not execute statement]
+[Last executed query: PREPARE mdb2_statement_mysql_53ac4bc6916f24c4e8d7cab635d8bb1609c22a944 FROM 'UPDATE dtb_news SET news_id= ?, news_title= ?, news_url= ?, news_comment= ?, link_method= ?, end_year= ?, end_month= ?, end_day= ?, news_date= ?, update_date= CURRENT_TIMESTAMP WHERE news_id = ?']
+[Native code: 1054]
+[Native message: Unknown column 'end_year' in 'field list']
+ on [/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(1095)] from 192.168.55.1
+login_id = admin(0)[nk1ihec19ervis8b1sk68rt861]
+/vagrant/www/eccube-2.13.5-mysql/html/admin/contents/index.php(29): LC_Page_Admin_Contents_Ex->process
+/vagrant/www/eccube-2.13.5-mysql/data/class_extends/page_extends/admin/contents/LC_Page_Admin_Contents_Ex.php(54): LC_Page_Admin_Contents->process
+/vagrant/www/eccube-2.13.5-mysql/data/class/pages/admin/contents/LC_Page_Admin_Contents.php(67): LC_Page_Admin_Contents->action
+/vagrant/www/eccube-2.13.5-mysql/data/class/pages/admin/contents/LC_Page_Admin_Contents.php(101): LC_Page_Admin_Contents->doRegist
+/vagrant/www/eccube-2.13.5-mysql/data/class/pages/admin/contents/LC_Page_Admin_Contents.php(212): SC_Helper_News->saveNews
+/vagrant/www/eccube-2.13.5-mysql/data/class/helper/SC_Helper_News.php(107): SC_Query->update
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(635): SC_Query->query
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(868): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(1095): trigger_error
+2017/03/07 12:24:10 [/eccube-2.13.5-mysql/html/admin/contents/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [PREPARE mdb2_statement_mysql_654fda1d2e27d8acc6e9bf789022b4577d64ec087 FROM 'INSERT INTO dtb_news(news_id,news_title,news_url,news_comment,link_method,end_year,end_month,end_day,creator_id,news_date,update_date,rank,create_date) SELECT ?,?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP,?,CURRENT_TIMESTAMP']
+PlaceHolder: [array (
+  0 => '2',
+  1 => 'テスト',
+  2 => '',
+  3 => 'テスト',
+  4 => 1,
+  5 => '2017',
+  6 => '3',
+  7 => '8',
+  8 => '2',
+  9 => '2017/3/7',
+  10 => 2,
+)]
+MDB2 Error: no such field
+_doQuery: [Error message: Could not execute statement]
+[Last executed query: EXECUTE mdb2_statement_mysql_654fda1d2e27d8acc6e9bf789022b4577d64ec087 USING @0, @1, @2, @3, @4, @5, @6, @7, @8, @9, @10]
+[Native code: 1054]
+[Native message: Unknown column 'end_year' in 'field list']
+ on [/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(1095)] from 192.168.55.1
+login_id = admin(0)[7mik2lthgrvi6qcdstv4fr3ef1]
+/vagrant/www/eccube-2.13.5-mysql/html/admin/contents/index.php(29): LC_Page_Admin_Contents_Ex->process
+/vagrant/www/eccube-2.13.5-mysql/data/class_extends/page_extends/admin/contents/LC_Page_Admin_Contents_Ex.php(54): LC_Page_Admin_Contents->process
+/vagrant/www/eccube-2.13.5-mysql/data/class/pages/admin/contents/LC_Page_Admin_Contents.php(67): LC_Page_Admin_Contents->action
+/vagrant/www/eccube-2.13.5-mysql/data/class/pages/admin/contents/LC_Page_Admin_Contents.php(101): LC_Page_Admin_Contents->doRegist
+/vagrant/www/eccube-2.13.5-mysql/data/class/pages/admin/contents/LC_Page_Admin_Contents.php(212): SC_Helper_News->saveNews
+/vagrant/www/eccube-2.13.5-mysql/data/class/helper/SC_Helper_News.php(101): SC_Query->insert
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(575): SC_Query->query
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(873): SC_Query->execute
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(1056): SC_Query->error
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(1095): trigger_error
+2017/03/07 12:25:23 [/eccube-2.13.5-mysql/html/admin/contents/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [PREPARE mdb2_statement_mysql_6e8e22753e7f9d1cd937c202045e6f27049223637 FROM 'INSERT INTO dtb_news(news_id,news_title,news_url,news_comment,link_method,end_year,end_month,end_day,creator_id,news_date,update_date,rank,create_date) SELECT ?,?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP,?,CURRENT_TIMESTAMP']
+PlaceHolder: [array (
+  0 => '3',
+  1 => 'テスト',
+  2 => '',
+  3 => '',
+  4 => 1,
+  5 => '2017',
+  6 => '3',
+  7 => '8',
+  8 => '2',
+  9 => '2017/3/7',
+  10 => 2,
+)]
+MDB2 Error: no such field
+_doQuery: [Error message: Could not execute statement]
+[Last executed query: EXECUTE mdb2_statement_mysql_6e8e22753e7f9d1cd937c202045e6f27049223637 USING @0, @1, @2, @3, @4, @5, @6, @7, @8, @9, @10]
+[Native code: 1054]
+[Native message: Unknown column 'end_year' in 'field list']
+ on [/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(1095)] from 192.168.55.1
+login_id = admin(0)[c00lkgogvrdfp3ob9c6ecagm63]
+/vagrant/www/eccube-2.13.5-mysql/html/admin/contents/index.php(29): LC_Page_Admin_Contents_Ex->process
+/vagrant/www/eccube-2.13.5-mysql/data/class_extends/page_extends/admin/contents/LC_Page_Admin_Contents_Ex.php(54): LC_Page_Admin_Contents->process
+/vagrant/www/eccube-2.13.5-mysql/data/class/pages/admin/contents/LC_Page_Admin_Contents.php(67): LC_Page_Admin_Contents->action
+/vagrant/www/eccube-2.13.5-mysql/data/class/pages/admin/contents/LC_Page_Admin_Contents.php(101): LC_Page_Admin_Contents->doRegist
+/vagrant/www/eccube-2.13.5-mysql/data/class/pages/admin/contents/LC_Page_Admin_Contents.php(212): SC_Helper_News->saveNews
+/vagrant/www/eccube-2.13.5-mysql/data/class/helper/SC_Helper_News.php(101): SC_Query->insert
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(575): SC_Query->query
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(873): SC_Query->execute
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(1056): SC_Query->error
+/vagrant/www/eccube-2.13.5-mysql/data/class/SC_Query.php(1095): trigger_error
+2017/03/07 12:52:53 [/eccube-2.13.5-mysql/html/admin/contents/index.php] Warning(E_WARNING): checkdate() expects parameter 2 to be long, string given on [/vagrant/www/eccube-2.13.5-mysql/data/class/SC_CheckError.php(1401)] from 192.168.55.1
