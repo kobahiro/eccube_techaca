@@ -76,6 +76,24 @@
                 </td>
             </tr>
             <tr>
+                <th>表示開始期限<span class="attention"> *</span></th>
+                <td>
+                    <!--{if $arrErr.start_year || $arrErr.start_month || $arrErr.start_day}--><span class="attention"><!--{$arrErr.start_year}--><!--{$arrErr.start_month}--><!--{$arrErr.start_day}--></span><!--{/if}-->
+                    <select name="start_year" <!--{if $arrErr.start_year || $arrErr.start_month || $arrErr.start_day }-->style="background-color:<!--{$smarty.const.ERR_COLOR|h}-->"<!--{/if}-->>
+                    <option value="" selected="selected">----</option>
+                    <!--{html_options options=$arrYear selected=$arrForm.start_year.value}-->
+                    </select>年
+                    <select name="start_month" <!--{if $arrErr.start_year || $arrErr.start_month || $arrErr.start_day}-->style="background-color:<!--{$smarty.const.ERR_COLOR|h}-->"<!--{/if}-->>
+                    <option value="" selected="selected">--</option>
+                    <!--{html_options options=$arrMonth selected=$arrForm.start_month.value}-->
+                    </select>月
+                    <select name="start_day" <!--{if $arrErr.start_year || $arrErr.start_month || $arrErr.start_day}-->style="background-color:<!--{$smarty.const.ERR_COLOR|h}-->"<!--{/if}-->>
+                    <option value="" selected="selected">--</option>
+                    <!--{html_options options=$arrDay selected=$arrForm.start_day.value}-->
+                    </select>日
+                </td>
+            </tr>
+            <tr>
                 <th>表示終了期限<span class="attention"> *</span></th>
                 <td>
                     <!--{if $arrErr.end_year || $arrErr.end_month || $arrErr.end_day}--><span class="attention"><!--{$arrErr.end_year}--><!--{$arrErr.end_month}--><!--{$arrErr.end_day}--></span><!--{/if}-->
