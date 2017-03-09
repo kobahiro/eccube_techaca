@@ -146,6 +146,8 @@
                 <th>順位</th>
                 <th>日付</th>
                 <th>タイトル</th>
+                <th>表示開始期限</th>
+                <th>表示開始期限</th>
                 <th class="edit">編集</th>
                 <th class="delete">削除</th>
                 <th>移動</th>
@@ -155,6 +157,7 @@
                 <!--{assign var=db_rank value="`$arrNews[data].rank`"}-->
                 <td><!--{math equation="$line_max - $db_rank + 1"}--></td>
                 <td><!--{$arrNews[data].cast_news_date|date_format:"%Y/%m/%d"}--></td>
+
                 <td class="left">
                     <!--{if $arrNews[data].link_method eq 1 && $arrNews[data].news_url != ""}--><a href="<!--{$arrNews[data].news_url|h}-->" ><!--{$arrNews[data].news_title|h|nl2br}--></a>
                     <!--{elseif $arrNews[data].link_method eq 1 && $arrNews[data].news_url == ""}--><!--{$arrNews[data].news_title|h|nl2br}-->
@@ -162,6 +165,8 @@
                     <!--{else}--><!--{$arrNews[data].news_title|h|nl2br}-->
                     <!--{/if}-->
                 </td>
+                <td><!--{$arrNews[data].cast_start_date|date_format:"%Y/%m/%d"}--></td>
+                <td><!--{$arrNews[data].cast_end_date|date_format:"%Y/%m/%d"}--></td>
                 <td>
                     <!--{if $arrNews[data].news_id != $tpl_news_id}-->
                     <a href="#" onclick="eccube.fnFormModeSubmit('move','pre_edit','news_id','<!--{$arrNews[data].news_id|h}-->'); return false;">編集</a>

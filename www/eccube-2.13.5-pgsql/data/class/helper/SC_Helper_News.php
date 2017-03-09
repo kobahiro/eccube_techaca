@@ -62,7 +62,7 @@ class SC_Helper_News
      * @param  boolean $has_deleted 削除されたニュースも含む場合 true; 初期値 false
      * @return array
      */
-    public function getList($flag, $dispNumber = 0, $pageNumber = 0, $has_deleted = false)
+    public function getList($dispNumber = 0, $pageNumber = 0, $has_deleted = false, $isAdmin = false)
     {
         $objQuery =& SC_Query_Ex::getSingletonInstance();
         $col = '*, cast(news_date as date) as cast_news_date, cast(start_date as date) as cast_start_date, cast(end_date as date) as cast_end_date';
@@ -70,7 +70,7 @@ class SC_Helper_News
         if (!$has_deleted) {
             $where .= "del_flg = 0";
         }
-        if($flag != 'admin'){
+        if(!$isAdmin){
             $where .= " AND start_date <= '" . date('Y-m-d') . "' AND end_date >= '" . date('Y-m-d') ."'";
         }
         $table = 'dtb_news';
