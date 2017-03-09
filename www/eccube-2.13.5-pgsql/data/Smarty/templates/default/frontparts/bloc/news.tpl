@@ -29,10 +29,8 @@
                 <!--{section name=data loop=$arrNews}-->
 
                 <!--{assign var="date_array" value="-"|explode:$arrNews[data].cast_news_date}-->
-                <!--{assign var="start_date_array" value="-"|explode:$arrNews[data].cast_start_date}-->
-                <!--{assign var="end_date_array" value="-"|explode:$arrNews[data].cast_end_date}-->
-                <!--{if $arrNews[data].cast_start_date <= $smarty.now|date_format:"%Y-%m-%d" && $smarty.now|date_format:"%Y-%m-%d" <= $arrNews[data].cast_end_date}-->
 
+                    <!--{if $arrNews[data].cast_start_date <= $smarty.now|date_format:"%Y-%m-%d" && $smarty.now|date_format:"%Y-%m-%d" <= $arrNews[data].cast_end_date}-->
                     <dl class="newslist">
                     <dt><!--{$date_array[0]}-->年<!--{$date_array[1]}-->月<!--{$date_array[2]}-->日</dt>
                     <dt>
@@ -45,7 +43,7 @@
                     </dt>
                     <dd class="mini"><!--{$arrNews[data].news_comment|h|nl2br}--></dd>
                 </dl>
-                <!--{/if}-->
+<!--{/if}-->
                 <!--{/section}-->
                 </div>
             </div>

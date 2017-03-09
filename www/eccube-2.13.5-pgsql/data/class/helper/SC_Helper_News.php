@@ -37,14 +37,18 @@ class SC_Helper_News
      * @param  boolean $has_deleted 削除されたニュースも含む場合 true; 初期値 false
      * @return array
      */
+
+
     public static function getNews($news_id, $has_deleted = false)
     {
+
         $objQuery =& SC_Query_Ex::getSingletonInstance();
         $col = '*, cast(news_date as date) as cast_news_date, cast(start_date as date) as cast_start_date, cast(end_date as date) as cast_end_date';
         $where = 'news_id = ?';
         if (!$has_deleted) {
-            $where .= ' AND del_flg = 0';
+            $where .= "AND del_flg = 0";
         }
+
         $arrRet = $objQuery->select($col, 'dtb_news', $where, array($news_id));
 
         return $arrRet[0];
@@ -64,7 +68,7 @@ class SC_Helper_News
         $col = '*, cast(news_date as date) as cast_news_date, cast(start_date as date) as cast_start_date, cast(end_date as date) as cast_end_date';
         $where = '';
         if (!$has_deleted) {
-            $where .= 'del_flg = 0';
+            $where .= "del_flg = 0";
         }
         $table = 'dtb_news';
         $objQuery->setOrder('rank DESC');
@@ -79,6 +83,7 @@ class SC_Helper_News
 
         return $arrRet;
     }
+
 
     /**
      * ニュースの登録.

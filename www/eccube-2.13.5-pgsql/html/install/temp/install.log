@@ -4398,3 +4398,17 @@
 2017/03/08 01:10:01 [/eccube-2.13.5-pgsql/html/install/index.php] WRITABLE：/vagrant/www/eccube-2.13.5-pgsql/html/ from 192.168.55.1
 2017/03/08 01:10:01 [/eccube-2.13.5-pgsql/html/install/index.php] WRITABLE：/vagrant/www/eccube-2.13.5-pgsql/html/../data/config/ from 192.168.55.1
 2017/03/08 01:10:01 [/eccube-2.13.5-pgsql/html/install/index.php] WRITABLE：/vagrant/www/eccube-2.13.5-pgsql/html/../data/config//config.php from 192.168.55.1
+2017/03/08 01:35:20 [/eccube-2.13.5-pgsql/html/install/index.php] _doQuery: [Error message: Could not execute statement]
+[Last executed query: create table dtb_module_update_logs(
+    log_id int NOT NULL,
+    module_id int NOT NULL,
+    buckup_path text,
+    error_flg smallint DEFAULT 0,
+    error text,
+    ok text,
+    create_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    update_date timestamp NOT NULL,
+    PRIMARY KEY (log_id)
+)]
+[Native message: ERROR:  relation "dtb_module_update_logs" already exists]
+ from 192.168.55.1
