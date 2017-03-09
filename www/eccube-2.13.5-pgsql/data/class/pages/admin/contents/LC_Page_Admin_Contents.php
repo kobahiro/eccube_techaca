@@ -155,7 +155,7 @@ class LC_Page_Admin_Contents extends LC_Page_Admin_Ex
                 break;
         }
 
-        $this->arrNews = $objNews->getList();
+        $this->arrNews = $objNews->getList('admin');
         $this->line_max = count($this->arrNews);
 
         $this->arrForm = $objFormParam->getFormParamList();
